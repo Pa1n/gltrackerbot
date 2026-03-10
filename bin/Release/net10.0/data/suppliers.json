@@ -1,0 +1,47 @@
+[
+  {
+    "id": 715,
+    "name": "Алматы поставщик",
+    "alias": "almaty",
+    "email": null,
+    "note": null,
+    "type": "Интернет-магазин",
+    "city": "Алматы"
+  },
+  {
+    "id": 1422,
+    "name": "Алматы поставщик \"новый\"",
+    "alias": "almaty_postavschik_noviy",
+    "email": null,
+    "note": null,
+    "type": "Интернет-магазин",
+    "city": "Алматы"
+  },
+  {
+    "id": 139,
+    "name": "Астана поставщик",
+    "alias": "astana",
+    "email": null,
+    "note": null,
+    "type": "Интернет-магазин",
+    "city": "Астана"
+  },
+  {
+    "id": 1388,
+    "name": "Астана поставщик \"новый\"",
+    "alias": "astana_postavschik_noviy",
+    "email": null,
+    "note": null,
+    "type": "Интернет-магазин",
+    "city": "Астана"
+  },
+  {
+    "id": 762,
+    "name": "Предзаказ Казахстан СЦ",
+    "alias": "kazahstan_predzakaz_sc",
+    "email": "store@ritos.ru",
+    "note": null,
+    "type": "Интернет-магазин",
+    "city": "Астана"
+  }
+]

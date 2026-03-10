@@ -1,0 +1,28 @@
+[
+  {
+    "SupplierId": 1388,
+    "ProductIds": [
+      4291,
+      5674,
+      5957
+    ],
+    "LastStock": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "SupplierId": 715,
+    "ProductIds": [
+      4291,
+      5674,
+      5957
+    ],
+    "LastStock": [
+      1,
+      0,
+      0
+    ]
+  }
+]

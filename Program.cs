@@ -32,7 +32,11 @@ var mainMenu = new ReplyKeyboardMarkup(new[]
   ResizeKeyboard = true // подгоняет клавиатуру под экран
 };
 // Загружаем справочник поставщиков
-var suppliersDictionary = JsonSerializer.Deserialize<List<Supplier>>(System.IO.File.ReadAllText("data/suppliers.json"))
+var path = Path.Combine(AppContext.BaseDirectory, "data", "suppliers.json");
+
+// Читаем JSON из файла
+var json = System.IO.File.ReadAllText(path);
+var suppliersDictionary = JsonSerializer.Deserialize<List<Supplier>>(json)
     .ToDictionary(s => s.id, s => s); // ключ = id, значение = объект Supplier
 
 

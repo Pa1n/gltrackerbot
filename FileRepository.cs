@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class FileRepository
 {
-  private readonly string _filePath = "data/items.json";
+  private readonly string _filePath = Path.Combine(AppContext.BaseDirectory, "data", "items.json");
 
   public List<WatchItem> LoadData()
   {

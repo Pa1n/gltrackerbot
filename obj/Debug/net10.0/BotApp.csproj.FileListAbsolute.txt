@@ -54,3 +54,5 @@
 /Users/yersultan/Documents/StockTrackerBot/BotApp/obj/Debug/net10.0/BotApp.genruntimeconfig.cache
 /Users/yersultan/Documents/StockTrackerBot/BotApp/obj/Debug/net10.0/ref/BotApp.dll
 /Users/yersultan/Documents/StockTrackerBot/BotApp/obj/Debug/net10.0/BotApp.sourcelink.json
+/Users/yersultan/Documents/StockTrackerBot/BotApp/bin/Debug/net10.0/data/items.json
+/Users/yersultan/Documents/StockTrackerBot/BotApp/bin/Debug/net10.0/data/suppliers.json

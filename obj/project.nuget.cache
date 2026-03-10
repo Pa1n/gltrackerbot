@@ -1,0 +1,73 @@
+{
+  "version": 2,
+  "dgSpecHash": "0QridUWJSVE=",
+  "success": true,
+  "projectFilePath": "/Users/yersultan/Documents/StockTrackerBot/BotApp/BotApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/yersultan/.nuget/packages/microsoft.entityframeworkcore/10.0.4/microsoft.entityframeworkcore.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.4/microsoft.entityframeworkcore.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.4/microsoft.entityframeworkcore.analyzers.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.entityframeworkcore.relational/10.0.0/microsoft.entityframeworkcore.relational.10.0.0.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.4/microsoft.extensions.caching.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.caching.memory/10.0.4/microsoft.extensions.caching.memory.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration/10.0.4/microsoft.extensions.configuration.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.4/microsoft.extensions.configuration.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.binder/10.0.4/microsoft.extensions.configuration.binder.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.commandline/10.0.4/microsoft.extensions.configuration.commandline.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.environmentvariables/10.0.4/microsoft.extensions.configuration.environmentvariables.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.fileextensions/10.0.4/microsoft.extensions.configuration.fileextensions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.json/10.0.4/microsoft.extensions.configuration.json.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.configuration.usersecrets/10.0.4/microsoft.extensions.configuration.usersecrets.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.4/microsoft.extensions.dependencyinjection.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.4/microsoft.extensions.dependencyinjection.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.diagnostics/10.0.4/microsoft.extensions.diagnostics.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.diagnostics.abstractions/10.0.4/microsoft.extensions.diagnostics.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.fileproviders.abstractions/10.0.4/microsoft.extensions.fileproviders.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.fileproviders.physical/10.0.4/microsoft.extensions.fileproviders.physical.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.filesystemglobbing/10.0.4/microsoft.extensions.filesystemglobbing.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.hosting/10.0.4/microsoft.extensions.hosting.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.hosting.abstractions/10.0.4/microsoft.extensions.hosting.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging/10.0.4/microsoft.extensions.logging.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.4/microsoft.extensions.logging.abstractions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging.configuration/10.0.4/microsoft.extensions.logging.configuration.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging.console/10.0.4/microsoft.extensions.logging.console.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging.debug/10.0.4/microsoft.extensions.logging.debug.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging.eventlog/10.0.4/microsoft.extensions.logging.eventlog.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.logging.eventsource/10.0.4/microsoft.extensions.logging.eventsource.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.options/10.0.4/microsoft.extensions.options.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.options.configurationextensions/10.0.4/microsoft.extensions.options.configurationextensions.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/microsoft.extensions.primitives/10.0.4/microsoft.extensions.primitives.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/npgsql/10.0.0/npgsql.10.0.0.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/npgsql.entityframeworkcore.postgresql/10.0.0/npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/system.diagnostics.eventlog/10.0.4/system.diagnostics.eventlog.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/system.net.http.json/10.0.4/system.net.http.json.10.0.4.nupkg.sha512",
+    "/Users/yersultan/.nuget/packages/telegram.bot/19.0.0/telegram.bot.19.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference System.Net.Http.Json will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "/Users/yersultan/Documents/StockTrackerBot/BotApp/BotApp.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/yersultan/Documents/StockTrackerBot/BotApp/BotApp.csproj",
+      "libraryId": "System.Net.Http.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "BotApp depends on Telegram.Bot (>= 18.1.0) but Telegram.Bot 18.1.0 was not found. Telegram.Bot 19.0.0 was resolved instead.",
+      "projectPath": "/Users/yersultan/Documents/StockTrackerBot/BotApp/BotApp.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/yersultan/Documents/StockTrackerBot/BotApp/BotApp.csproj",
+      "libraryId": "Telegram.Bot",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

@@ -48,6 +48,7 @@ bot.StartReceiving(
 );
 
 Console.WriteLine("Бот запущен...");
+await Task.Delay(-1);
 
 // ========================== Обработчик сообщений ==========================
 async Task HandleUpdateAsync(ITelegramBotClient client, Update update, CancellationToken ct)

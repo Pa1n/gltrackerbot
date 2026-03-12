@@ -18,7 +18,19 @@ var httpClient = new HttpClient();
 var cts = new CancellationTokenSource();
 
 // Список подписанных пользователей
-HashSet<long> subscribedChatIds = new HashSet<long>();
+var subscribersPath = Path.Combine(AppContext.BaseDirectory, "data", "subscribers.json");
+
+HashSet<long> subscribedChatIds;
+
+if (System.IO.File.Exists(subscribersPath))
+{
+  var jsonSubscribers = System.IO.File.ReadAllText(subscribersPath);
+  subscribedChatIds = JsonSerializer.Deserialize<HashSet<long>>(jsonSubscribers) ?? new HashSet<long>();
+}
+else
+{
+  subscribedChatIds = new HashSet<long>();
+}
 
 // ========================== Запуск бота ==========================
 var receiverOptions = new ReceiverOptions { AllowedUpdates = { } };
@@ -59,8 +71,14 @@ async Task HandleUpdateAsync(ITelegramBotClient client, Update update, Cancellat
   long chatId = message.Chat.Id;
 
   // Подписываем пользователя на уведомления
-  subscribedChatIds.Add(chatId);
-
+  if (!subscribedChatIds.Contains(chatId))
+  {
+    subscribedChatIds.Add(chatId);
+    System.IO.File.WriteAllText(
+          subscribersPath,
+          JsonSerializer.Serialize(subscribedChatIds)
+      );
+  }
   string text = message.Text.Trim();
   if (text == "/start")
   {
@@ -77,12 +95,18 @@ async Task HandleUpdateAsync(ITelegramBotClient client, Update update, Cancellat
       await client.SendTextMessageAsync(chatId, "Используй: /add supplierId productId");
       return;
     }
+    try
+    {
+      int supplierId = int.Parse(parts[1]);
+      int productId = int.Parse(parts[2]);
 
-    int supplierId = int.Parse(parts[1]);
-    int productId = int.Parse(parts[2]);
-
-    repo.AddProduct(supplierId, productId);
-    await client.SendTextMessageAsync(chatId, $"Товар {productId} добавлен для поставщика {supplierId} ✅");
+      repo.AddProduct(supplierId, productId);
+      await client.SendTextMessageAsync(chatId, $"Товар {productId} добавлен для поставщика {supplierId} ✅");
+    }
+    catch (Exception ex)
+    {
+      await client.SendTextMessageAsync(chatId, "Используй: /add supplierId productId");
+    }
   }
   else if (text.StartsWith("/suppliers"))
   {

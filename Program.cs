@@ -11,7 +11,7 @@ using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 
-var bot = new TelegramBotClient("8744734435:AAGU8mu8EkJhTYlQTJAtnSaQBxWm2hOj6hc");
+var bot = new TelegramBotClient("8723263081:AAEVVWrZEa_FUy5800Y1jIODbbeciepF-sE");
 
 var repo = new FileRepository(); // твой класс для хранения данных
 var httpClient = new HttpClient();
@@ -51,7 +51,7 @@ var json = System.IO.File.ReadAllText(path);
 var suppliersDictionary = JsonSerializer.Deserialize<List<Supplier>>(json)
     .ToDictionary(s => s.id, s => s); // ключ = id, значение = объект Supplier
 
-
+await bot.DeleteWebhookAsync();
 bot.StartReceiving(
     updateHandler: HandleUpdateAsync,
     pollingErrorHandler: HandleErrorAsync,
@@ -59,8 +59,9 @@ bot.StartReceiving(
     cancellationToken: cts.Token
 );
 
+
 Console.WriteLine("Бот запущен...");
-await Task.Delay(-1);
+
 
 // ========================== Обработчик сообщений ==========================
 async Task HandleUpdateAsync(ITelegramBotClient client, Update update, CancellationToken ct)
@@ -87,6 +88,19 @@ async Task HandleUpdateAsync(ITelegramBotClient client, Update update, Cancellat
         replyMarkup: mainMenu);
     return;
   }
+  if (text == "/reset")
+  {
+    var suppliers = repo.LoadData();
+
+    foreach (var s in suppliers)
+    {
+      s.LastStock = s.ProductIds.Select(_ => 0).ToList();
+    }
+
+    repo.SaveData(suppliers);
+
+    await bot.SendTextMessageAsync(message.Chat.Id, "✅ LastStock сброшен");
+  }
   if (text.StartsWith("/add"))
   {
     var parts = text.Split(" ");
@@ -111,6 +125,7 @@ async Task HandleUpdateAsync(ITelegramBotClient client, Update update, Cancellat
   else if (text.StartsWith("/suppliers"))
   {
     var suppliers = repo.LoadData();
+
     if (!suppliers.Any())
     {
       await client.SendTextMessageAsync(chatId, "Список поставщиков пуст");
@@ -181,6 +196,10 @@ _ = Task.Run(async () =>
   while (true)
   {
     var suppliers = repo.LoadData();
+    Console.WriteLine(JsonSerializer.Serialize(suppliers, new JsonSerializerOptions
+    {
+      WriteIndented = true
+    }));
     if (!suppliers.Any())
     {
       await Task.Delay(30000);
@@ -196,10 +215,21 @@ _ = Task.Run(async () =>
       for (int i = 0; i < suppliers.Count; i++)
       {
         var supplier = suppliers[i];
-        // если LastStock пустой или меньше ProductIds, инициализируем
-        if (supplier.LastStock == null || supplier.LastStock.Count != supplier.ProductIds.Count)
+        if (supplier.LastStock == null)
         {
-          supplier.LastStock = supplier.ProductIds.Select(_ => 0).ToList();
+          supplier.LastStock = new List<int>();
+        }
+
+        // расширяем список если нужно
+        while (supplier.LastStock.Count < supplier.ProductIds.Count)
+        {
+          supplier.LastStock.Add(0);
+        }
+
+        // если вдруг больше — обрезаем
+        if (supplier.LastStock.Count > supplier.ProductIds.Count)
+        {
+          supplier.LastStock = supplier.LastStock.Take(supplier.ProductIds.Count).ToList();
         }
       }
 
@@ -241,6 +271,7 @@ _ = Task.Run(async () =>
         }
       }
 
+      Console.WriteLine("Saving data...");
       repo.SaveData(suppliers);
     }
     catch (Exception ex)
@@ -251,5 +282,10 @@ _ = Task.Run(async () =>
     await Task.Delay(30000);
   }
 });
+Console.CancelKeyPress += (sender, e) =>
+{
+  Console.WriteLine("Stopping bot...");
+  cts.Cancel();
+};
 
-Console.ReadLine();
+await Task.Delay(-1);

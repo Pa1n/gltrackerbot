@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BotApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+554136edcd9d90a5024b584e24d83461a8c51df5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f16fb4ca29541a50e10d5968513222520b85fb0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("BotApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BotApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

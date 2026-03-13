@@ -188,7 +188,11 @@ Task HandleErrorAsync(ITelegramBotClient client, Exception exception, Cancellati
   Console.WriteLine(exception);
   return Task.CompletedTask;
 }
-
+Console.WriteLine("consumers---->");
+Console.WriteLine(JsonSerializer.Serialize(subscribedChatIds, new JsonSerializerOptions
+{
+  WriteIndented = true
+}));
 
 // ========================== Фоновый мониторинг ==========================
 _ = Task.Run(async () =>
@@ -196,10 +200,10 @@ _ = Task.Run(async () =>
   while (true)
   {
     var suppliers = repo.LoadData();
-    Console.WriteLine(JsonSerializer.Serialize(suppliers, new JsonSerializerOptions
-    {
-      WriteIndented = true
-    }));
+    // Console.WriteLine(JsonSerializer.Serialize(suppliers, new JsonSerializerOptions
+    // {
+    //   WriteIndented = true
+    // }));
     if (!suppliers.Any())
     {
       await Task.Delay(30000);
@@ -264,7 +268,7 @@ _ = Task.Run(async () =>
             foreach (var chatId in subscribedChatIds)
             {
               await bot.SendTextMessageAsync(chatId,
-                               $"🔥 Товар {productId} появился у поставщика {supplierName} ({city})");
+                               $"🔥 Товар {productId} (было {supplier.LastStock[j]} -> стало {stock}) появился у поставщика {supplierName} ({city})");
             }
           }
           supplier.LastStock[j] = stock;

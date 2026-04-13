@@ -11,7 +11,7 @@ using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 
-var bot = new TelegramBotClient("8723263081:AAEVVWrZEa_FUy5800Y1jIODbbeciepF-sE");
+var bot = new TelegramBotClient("8718230234:AAFMLpVxgmDAzyKQE8zQIKSLTbODjBGVNWA");
 
 var repo = new FileRepository(); // твой класс для хранения данных
 var httpClient = new HttpClient();

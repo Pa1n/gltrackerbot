@@ -228,11 +228,6 @@ _ = Task.Run(async () =>
     {
       var response = await httpClient.PostAsJsonAsync("https://greenleaf-global.com/api/v1/delivery/goods/rest", payload);
       var stocks = await response.Content.ReadFromJsonAsync<List<List<int>>>() ?? new List<List<int>>();
-      Console.WriteLine("response--->>");
-      Console.WriteLine(JsonSerializer.Serialize(stocks, new JsonSerializerOptions
-      {
-        WriteIndented = true
-      }));
       for (int i = 0; i < suppliers.Count; i++)
       {
         var supplier = suppliers[i];

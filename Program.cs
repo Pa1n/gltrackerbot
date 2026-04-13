@@ -180,6 +180,18 @@ async Task HandleUpdateAsync(ITelegramBotClient client, Update update, Cancellat
     repo.DeleteProduct(supplierId, productId);
     await client.SendTextMessageAsync(chatId, $"Товар {productId} удалён для поставщика {supplierId} ✅");
   }
+  else if (text == "/subs")
+  {
+    if (!subscribedChatIds.Any())
+    {
+      await client.SendTextMessageAsync(chatId, "Нет подписчиков");
+      return;
+    }
+
+    var list = string.Join("\n", subscribedChatIds);
+
+    await client.SendTextMessageAsync(chatId, $"Подписчики:\n{list}");
+  }
 }
 
 // ========================== Обработчик ошибок ==========================
